@@ -1,9 +1,8 @@
-package cn.adbyte.swaggerdemo;
+package cn.adbyte.swagger;
 
 import com.google.common.base.Predicate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -35,8 +34,9 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @EnableSwagger2
 @SpringBootApplication
 public class Swagger2Application {
+
     public static void main(String[] args) {
-        ApplicationContext ctx = SpringApplication.run(Swagger2Application.class, args);
+        SpringApplication.run(Swagger2Application.class, args);
     }
 
     @Bean
@@ -60,7 +60,7 @@ public class Swagger2Application {
                 .paths(categoryPaths())
                 .build()
                 .ignoredParameterTypes(ApiIgnore.class)
-                .enableUrlTemplating(true);
+                .enableUrlTemplating(false);
     }
 
     @Bean
@@ -74,7 +74,10 @@ public class Swagger2Application {
     }
 
     private Predicate<String> categoryPaths() {
-        return or(regex("/category.*"), regex("/category"), regex("/categories"));
+        return or(regex("/category.*")                ,
+                regex("/category"),
+                regex("/categories"),
+                regex("/hi"));
     }
 
     private Predicate<String> multipartPaths() {

@@ -1,4 +1,4 @@
-package cn.adbyte.swaggerdemo.web;
+package cn.adbyte.swagger.api;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
