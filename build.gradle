@@ -7,7 +7,6 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'cn.adbyte'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '12'
 
 configurations {
     developmentOnly
@@ -20,6 +19,7 @@ configurations {
 }
 
 repositories {
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     mavenCentral()
 }
 
