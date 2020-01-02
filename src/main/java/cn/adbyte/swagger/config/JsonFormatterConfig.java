@@ -54,10 +54,7 @@ public class JsonFormatterConfig implements Formatter<LocalDateTime> {
 
                 // ⬇ 数字
                 .serializerByType(BigDecimal.class, ToStringSerializer.instance)
-                .serializerByType(Long.class, ToStringSerializer.instance)
-
-                .deserializerByType(BigDecimal.class, NumberDeserializers.BigDecimalDeserializer.instance)
-                .deserializerByType(Long.class, NumberDeserializers.NumberDeserializer.instance);
+                .serializerByType(Long.class, ToStringSerializer.instance);
 
     }
 

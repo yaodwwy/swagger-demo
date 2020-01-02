@@ -16,7 +16,7 @@ public class FooQuery {
     private Long id;
     private String name;
     private Gender gender;
-    @ApiModelProperty(allowableValues = "FEMALE,MALE",notes = "Gender.class")
+    @ApiModelProperty(allowableValues = "FEMALE,MALE")
     private String genderStr;
 
     public FooEntity convertTo() {
